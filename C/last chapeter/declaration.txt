@@ -1,0 +1,25 @@
+Declaring a file pointer
+SYNTAX:
+FILE * file_pointer_name;
+ex:
+FILE* f;
+Opening a file:
+ A file must be opened before data can be read or written to it .
+fopen() function is used to open a file.
+Syntax:
+FILE* fopen(const * file_name , const char *mode);
+Various modes used to open a file:
+r ------> open a file for reading .if it doesnt exist the an error will be reported.
+
+w ------> open a file for writing .if it doesnt exist, then it will be created .if it exist then all its contents will be erased.
+
+a ------> Append a text to a file .if it doesnt exist then it will be created.
+
+rb ------> open a binary file for reading. By default this will be sequential file in meadia 4 format.
+
+wb-------> open a binary file for writing .
+ab ------> append to a binary file.
+r+ ------> open a text file for both reading and writing .
+ the stream will be positioned at the begining of the file .
+ when you specify r+ ,you indicate that you want to read the 
+ file before you write to it .Thus, the file must already exist.

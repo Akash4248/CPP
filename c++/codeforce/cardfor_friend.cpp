@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,h,w,c=0;
+        cin>>w>>h>>n;
+       while(w%2==0 || h%2==0)
+       {
+        c+=2;
+        if(w%2==0) w=w/2;
+        else h=h/2;
+
+       }
+       if(c==0) c=1;
+       if(c>=n)
+       cout<<"YES"<<endl;
+       else
+       cout<<"NO"<<endl;
+    }
+}

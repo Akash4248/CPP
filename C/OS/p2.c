@@ -1,0 +1,77 @@
+#include<stdio.h>
+ #include<string.h>
+ #include<sys/types.h>
+ #include<stdlib.h>
+ #include<unistd.h>
+ #include<wait.h>
+ intmain(intargc,char*argv[]){
+    printf("MainFunction:\n");
+    intretval=1;
+    pid_tpid=fork();
+   
+    if(pid<0){
+        printf("Errorinforkoperation\n");
+    }
+    if(pid==0){
+        printf("PIDforChildprocess:%d\nPIDofitsparentprocess:%d\n",getpid(),getppid());
+        execl("./binsearch",argv[1],NULL);
+    }
+    else{
+        printf("PIDofparentprocess:%d\n",getpid());
+        wait(&retval);
+        if(WIFEXITED(retval)==1)
+        {
+            printf("Childterminatednormally\n");
+        }
+        else{
+        printf("Childterminatedabnormally\n");
+        exit(0);
+        }
+    }
+    return0;
+ }
+ Binarysearchapplication
+ #include<stdio.h>
+ intbinarySearch(intarr[],intl,intr,intx) 
+{ 
+    if(r>=l){ 
+        intmid=l+(r-l)/2; 
+        if(arr[mid]==x) 
+            return1; 
+        if(arr[mid]>x) 
+            returnbinarySearch(arr,l,mid-1,x); 
+        returnbinarySearch(arr,mid+1,r,x); 
+    } 
+    return-1; 
+} 
+voidswap(int*xp,int*yp){ 
+    
+    inttemp=*xp; 
+    *xp=*yp; 
+    *yp=temp; 
+} 
+voidsort(intarr[],intn){ 
+   inti,j; 
+   for(i=0;i<n-1;i++)       
+       for(j=0;j<n-i-1;j++)  
+           if(arr[j]>arr[j+1]) 
+              swap(&arr[j],&arr[j+1]); 
+}   
+intmain(void){
+    
+    intn,key,arr[10];
+    printf("Enterthenumberofelementsinthearray: ");
+    scanf("%d",&n);
+    printf("Entertheelements:");
+    for(inti=0;i<n;i++)
+        scanf("%d",&arr[i]);
+    sort(arr,n);    
+    printf("Enterelementtobesearched: ");
+    scanf("%d",&key);
+    intresult=binarySearch(arr,0,n-1,key); 
+    if(result==-1)
+        printf("Elementisnotpresentinarray"); 
+    else 
+        printf("Elementispresent"); 
+    return0; 
+}

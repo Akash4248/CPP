@@ -1,0 +1,21 @@
+FILE CLOSING------------->
+to close a opened file we use fclose() function .It not only closes the file but also erases all the buffers saved for that file .Once we use fclose() the file pointer disconnects from file and can be used to point another file or same file but in different mode.
+
+Syntax:
+Fclose(FILE *ptr);
+
+In addition to  fclose() there is another function fcloseall() which closes all the streams that are  currently open except standard streams.
+
+Syntax:
+int fcloseall(void);
+
+Reading data from files
+fscanf()
+fgets()
+fgetc()
+fread()
+
+1.fscanf():
+It is used to read formatted data from stream.
+Syntax:
+fscanf(FILE * stream, const cahr* format);

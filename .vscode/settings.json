@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "STARPYRAMIDMAST.C": "cpp",
+        "NUMBERPYRAMIDMAST2.C": "cpp",
+        "numberppyramidmast.C": "cpp",
+        "DOUBLEPOINTER.C": "cpp"
+    },
+    "git.ignoreLimitWarning": true
+}
